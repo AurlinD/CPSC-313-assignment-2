@@ -1,0 +1,90 @@
+.pos 0x100
+main:   
+        irmovq  stackend, %rsp
+        irmovq  array, %rdi
+        irmovq  arraysize, %rsi
+        mrmovq  (%rsi), %rsi
+        call    quickSort
+        halt
+        
+.pos 0x200
+quickSort:
+        pushq   %r12
+        pushq   %rbp
+        pushq   %rbx
+        rrmovq  %rsi, %rbp
+        irmovq  $1, %r9
+        subq    %rsi, %r9
+        jge     LN1
+        irmovq  $8, %r9
+        rrmovq  %rsi, %rcx
+        mulq    %r9, %rcx
+        subq    %r9, %rcx
+        addq    %rdi, %rcx
+        mrmovq  (%rcx), %r8
+        rrmovq  %rdi, %r9
+        subq    %rcx, %r9
+        jle     LN6
+        rrmovq  %rdi, %rbx
+LN3:    mrmovq  (%rcx), %rax
+        mrmovq  (%rbx), %rdx
+        rmmovq  %rdx, (%rcx)
+        rmmovq  %rax, (%rbx)
+        rrmovq  %rbx, %r12
+        subq    %rdi, %r12
+        irmovq  $8, %r9
+        divq    %r9, %r12
+        rrmovq  %r12, %rsi
+        call    quickSort
+        subq    %r12, %rbp
+        rrmovq  %rbp, %rsi
+        irmovq  $1, %r9
+        subq    %r9, %rsi
+        irmovq  $8, %r9
+        rrmovq  %rbx, %rdi
+        addq    %r9, %rdi
+        call    quickSort
+        jmp     LN1
+LN6:    rrmovq  %rdi, %rax
+        rrmovq  %rdi, %rbx
+LN5:    mrmovq  (%rax), %rdx
+        rrmovq  %r8, %r9
+        subq    %rdx, %r9
+        jl      LN4
+        mrmovq  (%rbx), %rsi
+        rmmovq  %rsi, (%rax)
+        rmmovq  %rdx, (%rbx)
+        irmovq  $8, %r9
+        addq    %r9, %rbx
+LN4:    irmovq  $8, %r9
+        addq    %r9, %rax
+        rrmovq  %rcx, %r9
+        subq    %rax, %r9
+        jle     LN3
+        jmp     LN5
+LN1:    popq    %rbx
+        popq    %rbp
+        popq    %r12
+        ret
+        
+.pos 0x2000
+array:  .quad 0x00000007
+        .quad 0x00000003
+        .quad 0x00000004
+        .quad 0x0000000a
+        .quad 0x00000005
+        .quad 0x00000008
+        .quad 0x00000009
+        .quad 0x00000001
+        .quad 0x00000002
+        .quad 0x00000006
+        
+.pos 0x2500
+arraysize: .quad 10
+           
+.pos 0x3000
+stack:  .quad 0x0,200
+stackend:
+        .quad 0x0
+
+
