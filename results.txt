@@ -1,1 +1,187 @@
-PART 2
+Provided Input Array:
+array:  .quad 0x00000007
+        .quad 0x00000003
+        .quad 0x00000004
+        .quad 0x0000000a
+        .quad 0x00000005
+        .quad 0x00000008
+        .quad 0x00000009
+        .quad 0x00000001
+        .quad 0x00000002
+        .quad 0x00000006
+
+Sequential implementation
+Clock count: 507
+Retired instructions: 507
+
+
+Pipeline implementation using stalls only;
+Clock count: 1301
+Retired instructions: 507
+
+
+Pipeline implementation using data forwarding;
+Clock count: 666
+Retired instructions: 507
+
+
+Pipeline implementation using data forwarding and branch prediction.
+Clock count: 628
+Retired instructions: 507
+
+---------------------------------------------------------------------------------------------------
+
+Array 1:
+array:  .quad 0x0000000a
+        .quad 0x0000000b
+        .quad 0x0000000c
+
+Sequential implementation
+Clock count: 800
+Retired instructions: 800
+
+
+Pipeline implementation using stalls only;
+Clock count: 2046
+Retired instructions: 800
+
+
+Pipeline implementation using data forwarding;
+Clock count: 1042
+Retired instructions: 800
+
+
+Pipeline implementation using data forwarding and branch prediction.
+Clock count: 968
+Retired instructions: 800
+
+---------------------------------------------------------------------------------------------------
+
+Array 2:
+array:  .quad 0x0000000c
+        .quad 0x0000000b
+        .quad 0x0000000a
+
+Sequential implementation
+Clock count: 810
+Retired instructions: 810
+
+
+Pipeline implementation using stalls only;
+Clock count: 2068
+Retired instructions: 810
+
+
+Pipeline implementation using data forwarding;
+Clock count: 1054
+Retired instructions: 810
+
+
+Pipeline implementation using data forwarding and branch prediction.
+Clock count: 976
+Retired instructions: 810
+
+---------------------------------------------------------------------------------------------------
+
+Array 3:
+array:  .quad 0x0000000b
+        .quad 0x00000012
+        .quad 0x0000000a
+        .quad 0x00000005
+        .quad 0x00000009
+        .quad 0x0000000f
+        .quad 0x0000000c
+        .quad 0x00000015
+        .quad 0x00000001
+        .quad 0x00000003
+        .quad 0x00000069
+        .quad 0x00000420
+        .quad 0x00000033
+        .quad 0x000000ac
+        .quad 0x00000008
+        .quad 0x00000042
+        .quad 0x00000056
+        .quad 0x00000018
+        .quad 0x00000099
+        .quad 0x00000012
+        .quad 0x00000010
+        .quad 0x00001337
+        .quad 0x00000017
+        .quad 0x000000bc
+        .quad 0x00001492
+        .quad 0x00006969
+        .quad 0x00000001
+        .quad 0x00000023
+        .quad 0x00002323
+        .quad 0x00000054
+        .quad 0x00000024
+
+
+Sequential implementation
+Clock count: 572
+Retired instructions: 572
+
+
+Pipeline implementation using stalls only;
+Clock count: 1449
+Retired instructions: 572
+
+
+Pipeline implementation using data forwarding;
+Clock count: 754
+Retired instructions: 572
+
+
+Pipeline implementation using data forwarding and branch prediction.
+Clock count: 710
+Retired instructions: 572
+
+---------------------------------------------------------------------------------------------------
+
+Array 4:
+array:  .quad 0x00000000
+
+Sequential implementation
+Clock count: 1151
+Retired instructions: 1151
+
+
+Pipeline implementation using stalls only;
+Clock count: 2867
+Retired instructions: 1151
+
+
+Pipeline implementation using data forwarding;
+Clock count: 1502
+Retired instructions: 1151
+
+
+Pipeline implementation using data forwarding and branch prediction.
+Clock count: 1376
+Retired instructions: 1151
+
+---------------------------------------------------------------------------------------------------
+
+Array 5:
+array:  .quad 0x0000000a
+        .quad 0x0000000a
+        .quad 0x0000000a
+
+Sequential implementation
+Clock count: 815
+Retired instructions: 815
+
+
+Pipeline implementation using stalls only;
+Clock count: 2079
+Retired instructions: 815
+
+
+Pipeline implementation using data forwarding;
+Clock count: 1060
+Retired instructions: 815
+
+
+Pipeline implementation using data forwarding and branch prediction.
+Clock count: 980
+Retired instructions: 815
