@@ -15,7 +15,8 @@ quickSort:
         rrmovq  %rsi, %rbp                      # register move %rbp <- %rsi
         pushq   %rbx                            # save old %rbx value, and decrement %rsp
         subq    %rsi, %r9                       # %r9 <- %r9 - %rsi, rsi is variable len
-        jge     LN1                             # if %r9 is greater than or equal to 0 jump to LN1, if (len <= 1) 
+        jge     LN1                             # if %r9 is greater than or equal to 0 jump to LN1, if (len <= 1)
+
         irmovq  $8, %r9                         # %r9 <- $8
         rrmovq  %rsi, %rcx                      # %rcx <- %rsi
         mulq    %r9, %rcx                       # %rcx <- %rcx * %r9
@@ -23,17 +24,17 @@ quickSort:
         addq    %rdi, %rcx                      # %rcx <- %rcx - %rdi
         rrmovq  %rdi, %r9                       # %r9 <- %rdi
         mrmovq  (%rcx), %r8                     # %r8 <- M[%rcx]
-        subq    %rcx, %r9                       # %r9 <- %r9 - %rcx
         rrmovq  %rdi, %rbx                      # %rbx <- %rdi
-        jg     LN3                             # if %r9 is less than or equal to 0, jump to LN6
+        subq    %rcx, %r9                       # %r9 <- %r9 - %rcx
+        jg      LN3                             # if %r9 is less than or equal to 0, jump to LN6
 
         rrmovq  %rdi, %rax                      # %rax <- %rdi 
-        rrmovq  %rdi, %rbx                      # %rbx <- %rdi
 LN5:    mrmovq  (%rax), %rdx                    # %rdx <- M[%rax]
         rrmovq  %r8, %r9                        # %r9 <- %r8
+        mrmovq  (%rbx), %rsi                    # %rsi <- M[%rbx]
         subq    %rdx, %r9                       # %r9 <- %r9 - %rdx
         jl      LN4                             # jump to LN4 if %r9 is less than 0
-        mrmovq  (%rbx), %rsi                    # %rsi <- M[%rbx]
+
         irmovq  $8, %r9                         # %r9 <- $8
         rmmovq  %rdx, (%rbx)                    # M[%rbx] <- %rdx
         rmmovq  %rsi, (%rax)                    # M[%rax] <- %rsi
