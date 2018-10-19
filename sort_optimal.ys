@@ -3,6 +3,8 @@ main:
         irmovq  arraysize, %rsi                 # move arraysize to %rsi (param)
         irmovq  stackend, %rsp                  # move stackend to stack pointer %rsp (param)
         irmovq  array, %rdi                     # move array pointer to %rdi (param)
+        irmovq  $1, %r10                        # %r10 <- $1
+        irmovq  $8, %r13                        # %r13 <- $8
         mrmovq  (%rsi), %rsi                    # get array from memory using arraysize to %rsi
         call    quickSort                       # pushq then jump to .pos 0x200, labeled quickSort
         halt
@@ -10,15 +12,13 @@ main:
 .pos 0x200
 quickSort:
         pushq   %rbp                            # save old %rbp value, and decrement %rsp, variable I
-        irmovq  $1, %r10                        # %r10 <- $1
         pushq   %r12                            # save old %r12 value, and decrement %rsp, varialbe A
         rrmovq  %rsi, %rbp                      # register move %rbp <- %rsi
-        rrmovq  %r10, %r11
-        subq    %rsi, %r11                      # %r9 <- %r9 - %rsi, rsi is variable len
+        rrmovq  %r10, %r9
+        subq    %rsi, %r9                       # %r9 <- %r9 - %rsi, rsi is variable len
         pushq   %rbx                            # save old %rbx value, and decrement %rsp
         jge     LN1                             # if %r9 is greater than or equal to 0 jump to LN1, if (len <= 1) 
 
-        irmovq  $8, %r13                        # %r13 <- $8
         rrmovq  %rsi, %rcx                      # %rcx <- %rsi
         mulq    %r13, %rcx                      # %rcx <- %rcx * %r13
         subq    %r13, %rcx                      # %rcx <- %rcx - %r13
