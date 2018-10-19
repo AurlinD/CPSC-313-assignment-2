@@ -39,12 +39,12 @@ LN3:    mrmovq  (%rcx), %rax                    # %rax <- M[%rcx]
         rrmovq  %r12, %rsi                      # %rsi <- %r12
         call    quickSort                       # recursive call quickSort(A, i - A);
         subq    %r12, %rbp                      # %rbp <- %rbp - %r12, I-A
-        irmovq  $1, %r9                         # %r9 <- $1
-        rrmovq  %rbp, %rsi                      # %rsi <- %rbp, set %rsi = I-A
-        rrmovq  %rbx, %rdi                      # %rdi <- %rbx
-        subq    %r9, %rsi                       # %rsi <- %rsi - %r9, (I-A)-1
         irmovq  $8, %r9                         # %r9 <- $8
+        rrmovq  %rbx, %rdi                      # %rdi <- %rbx
+        rrmovq  %rbp, %rsi                      # %rsi <- %rbp, set %rsi = I-A
         addq    %r9, %rdi                       # %rdi <- %rdi + %r9
+        irmovq  $1, %r9                         # %r9 <- $1
+        subq    %r9, %rsi                       # %rsi <- %rsi - %r9, (I-A)-1
         call    quickSort                       # recursive call quickSort(i + 1, len - (i - A) - 1);
 
 LN1:    popq    %rbx                            # increment %rsp, delete %rbx value
@@ -56,11 +56,11 @@ LN6:    rrmovq  %rdi, %rax                      # %rax <- %rdi
         rrmovq  %rdi, %rbx                      # %rbx <- %rdi
 LN5:    mrmovq  (%rax), %rdx                    # %rdx <- M[%rax]
         rrmovq  %r8, %r9                        # %r9 <- %r8
+        mrmovq  (%rbx), %rsi                    # %rsi <- M[%rbx]
         subq    %rdx, %r9                       # %r9 <- %r9 - %rdx
         irmovq  $8, %r9                         # %r9 <- $8
         jl      LN4                             # jump to LN4 if %r9 is less than 0
 
-        mrmovq  (%rbx), %rsi                    # %rsi <- M[%rbx]
         rmmovq  %rdx, (%rbx)                    # M[%rbx] <- %rdx
         rmmovq  %rsi, (%rax)                    # M[%rax] <- %rsi
         addq    %r9, %rbx                       # %rbx <- %rbx + %r9

@@ -29,6 +29,12 @@ Pipeline implementation using data forwarding and branch prediction.
 Clock count: 628
 Retired instructions: 507
 
+sort_reorder.ys
+- 503 / 503
+- 1024 / 503
+- 648 / 503
+- 610 / 503
+
 ---------------------------------------------------------------------------------------------------
 
 Array 1:
@@ -55,6 +61,12 @@ Pipeline implementation using data forwarding and branch prediction.
 Clock count: 968
 Retired instructions: 800
 
+sort_reorder.ys
+- 777 / 777
+- 1565 / 777
+- 990 / 777
+- 916 / 777
+
 ---------------------------------------------------------------------------------------------------
 
 Array 2:
@@ -80,6 +92,12 @@ Retired instructions: 810
 Pipeline implementation using data forwarding and branch prediction.
 Clock count: 976
 Retired instructions: 810
+
+sort_reorder.ys
+- 783 / 783
+- 1571 / 783
+- 996 / 783
+- 918 / 783
 
 ---------------------------------------------------------------------------------------------------
 
@@ -136,6 +154,12 @@ Pipeline implementation using data forwarding and branch prediction.
 Clock count: 710
 Retired instructions: 572
 
+sort_reorder.ys
+- 567 / 567
+- 1133 / 567
+- 732 / 567
+- 688 / 567
+
 ---------------------------------------------------------------------------------------------------
 
 Array 4:
@@ -159,6 +183,12 @@ Retired instructions: 1151
 Pipeline implementation using data forwarding and branch prediction.
 Clock count: 1376
 Retired instructions: 1151
+
+sort_reorder.ys
+- 1097 / 1097
+- 2112 / 1097
+- 1394 / 1097
+- 1268 / 1097
 
 ---------------------------------------------------------------------------------------------------
 
@@ -185,3 +215,9 @@ Retired instructions: 815
 Pipeline implementation using data forwarding and branch prediction.
 Clock count: 980
 Retired instructions: 815
+
+sort_reorder.ys	
+- 786 / 786	
+- 1574 / 786	
+- 999 / 786	
+- 919 / 786
