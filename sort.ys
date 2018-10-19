@@ -1,40 +1,40 @@
 .pos 0x100
 main:   
         irmovq  stackend, %rsp                  # move stackend to stack pointer %rsp (param)
-        irmovq  array, %rdi                     # move array pointer to %rdi (param)
-        irmovq  arraysize, %rsi                 # move arraysize to %rsi (param)
-        mrmovq  (%rsi), %rsi                    # get array from memory using arraysize to %rsi
+        irmovq  array, %rdi                     # move array pointer to %rdi (param), %rdi = A
+        irmovq  arraysize, %rsi                 # move arraysize to %rsi (param), %rsi = &len
+        mrmovq  (%rsi), %rsi                    # get array from memory using arraysize to %rsi, %rsi = len
         call    quickSort                       # pushq then jump to .pos 0x200, labeled quickSort
         halt
         
 .pos 0x200
 quickSort:
-        pushq   %r12                            # save old %r12 value, and decrement %rsp, varialbe A
-        pushq   %rbp                            # save old %rbp value, and decrement %rsp, variable I
-        pushq   %rbx                            # save old %rbx value, and decrement %rsp
-        rrmovq  %rsi, %rbp                      # register move %rbp <- %rsi
+        pushq   %r12                            # save old %r12 value, and decrement %rsp, varialbe i -A
+        pushq   %rbp                            # save old %rbp value, and decrement %rsp, variable len - (i - A)
+        pushq   %rbx                            # save old %rbx value, and decrement %rsp, array pointer i/j
+        rrmovq  %rsi, %rbp                      # register move %rbp <- %rsi, rbp = len
         irmovq  $1, %r9                         # %r9 <- $1
         subq    %rsi, %r9                       # %r9 <- %r9 - %rsi, rsi is variable len
         jge     LN1                             # if %r9 is greater than or equal to 0 jump to LN1, if (len <= 1) 
         irmovq  $8, %r9                         # %r9 <- $8
-        rrmovq  %rsi, %rcx                      # %rcx <- %rsi
-        mulq    %r9, %rcx                       # %rcx <- %rcx * %r9
-        subq    %r9, %rcx                       # %rcx <- %rcx - %r9
-        addq    %rdi, %rcx                      # %rcx <- %rcx - %rdi
-        mrmovq  (%rcx), %r8                     # %r8 <- M[%rcx]
-        rrmovq  %rdi, %r9                       # %r9 <- %rdi
-        subq    %rcx, %r9                       # %r9 <- %r9 - %rcx
+        rrmovq  %rsi, %rcx                      # %rcx <- %rsi, rsi , len
+        mulq    %r9, %rcx                       # %rcx <- %rcx * %r9 , len * 8
+        subq    %r9, %rcx                       # %rcx <- %rcx - %r9, len - 8
+        addq    %rdi, %rcx                      # %rcx <- %rcx - %rdi, len + A
+        mrmovq  (%rcx), %r8                     # %r8 <- M[%rcx], pivot
+        rrmovq  %rdi, %r9                       # %r9 <- %rdi, rdi = i
+        subq    %rcx, %r9                       # %r9 <- %r9 - %rcx, j - high
         jle     LN6                             # if %r9 is less than or equal to 0, jump to LN6
-        rrmovq  %rdi, %rbx                      # %rbx <- %rdi
-LN3:    mrmovq  (%rcx), %rax                    # %rax <- M[%rcx]
-        mrmovq  (%rbx), %rdx                    # %rdx <- M[%rbx]
-        rmmovq  %rdx, (%rcx)                    # M[%rcx] <- %rdx
-        rmmovq  %rax, (%rbx)                    # M[%rbx] <- %rax
-        rrmovq  %rbx, %r12                      # %r12 <- %rbx
+        rrmovq  %rdi, %rbx                      # %rbx <- %rdi , rbx = 1
+LN3:    mrmovq  (%rcx), %rax                    # %rax <- M[%rcx], rax = pivot
+        mrmovq  (%rbx), %rdx                    # %rdx <- M[%rbx], rdx = *i
+        rmmovq  %rdx, (%rcx)                    # M[%rcx] <- %rdx, pivot = *i
+        rmmovq  %rax, (%rbx)                    # M[%rbx] <- %rax, *i = t
+        rrmovq  %rbx, %r12                      # %r12 <- %rbx, r12 = i
         subq    %rdi, %r12                      # %r12 <- %r12 - %rdi
         irmovq  $8, %r9                         # %r9 <- $8
-        divq    %r9, %r12                       # %r12 <- %r12 / %r9
-        rrmovq  %r12, %rsi                      # %rsi <- %r12
+        divq    %r9, %r12                       # %r12 <- %r12 / %r9, %r12 = (i - A) / 8
+        rrmovq  %r12, %rsi                      # %rsi <- %r12, %rsi= (i-A)/8
         call    quickSort                       # recursive call quickSort(A, i - A);
         subq    %r12, %rbp                      # %rbp <- %rbp - %r12, I-A
         rrmovq  %rbp, %rsi                      # %rsi <- %rbp, set %rsi = I-A
@@ -42,20 +42,20 @@ LN3:    mrmovq  (%rcx), %rax                    # %rax <- M[%rcx]
         subq    %r9, %rsi                       # %rsi <- %rsi - %r9, (I-A)-1
         irmovq  $8, %r9                         # %r9 <- $8
         rrmovq  %rbx, %rdi                      # %rdi <- %rbx
-        addq    %r9, %rdi                       # %rdi <- %rdi + %r9
+        addq    %r9, %rdi                       # %rdi <- %rdi + %r9, rdi = i++
         call    quickSort                       # recursive call quickSort(i + 1, len - (i - A) - 1);
         jmp     LN1                             # jump to LN1
 LN6:    rrmovq  %rdi, %rax                      # %rax <- %rdi 
         rrmovq  %rdi, %rbx                      # %rbx <- %rdi
-LN5:    mrmovq  (%rax), %rdx                    # %rdx <- M[%rax]
-        rrmovq  %r8, %r9                        # %r9 <- %r8
-        subq    %rdx, %r9                       # %r9 <- %r9 - %rdx
+LN5:    mrmovq  (%rax), %rdx                    # %rdx <- M[%rax] rdx= *j
+        rrmovq  %r8, %r9                        # %r9 <- %r8, r9 = pivot
+        subq    %rdx, %r9                       # %r9 <- %r9 - %rdx , r9 = pivot - *j
         jl      LN4                             # jump to LN4 if %r9 is less than 0
-        mrmovq  (%rbx), %rsi                    # %rsi <- M[%rbx]
-        rmmovq  %rsi, (%rax)                    # M[%rax] <- %rsi
-        rmmovq  %rdx, (%rbx)                    # M[%rbx] <- %rdx
+        mrmovq  (%rbx), %rsi                    # %rsi <- M[%rbx], rsi = *i
+        rmmovq  %rsi, (%rax)                    # M[%rax] <- %rsi, rax = i
+        rmmovq  %rdx, (%rbx)                    # M[%rbx] <- %rdx, *i = *j
         irmovq  $8, %r9                         # %r9 <- $8
-        addq    %r9, %rbx                       # %rbx <- %rbx + %r9
+        addq    %r9, %rbx                       # %rbx <- %rbx + %r9, i++
 LN4:    irmovq  $8, %r9                         # %r9 <- 8
         addq    %r9, %rax                       # %rax <- %rax + %r9
         rrmovq  %rcx, %r9                       # %r9 <- %rcx
