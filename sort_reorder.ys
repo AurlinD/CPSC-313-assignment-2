@@ -27,7 +27,7 @@ quickSort:
         subq    %rcx, %r9                       # %r9 <- %r9 - %rcx
         jle     LN6                             # if %r9 is less than or equal to 0, jump to LN6
 
-        rrmovq  %rdi, %rbx                      # %rbx <- %rdi//////////////////////////
+        rrmovq  %rdi, %rbx                      # %rbx <- %rdi
 LN3:    mrmovq  (%rcx), %rax                    # %rax <- M[%rcx]
         rrmovq  %rbx, %r12                      # %r12 <- %rbx
         irmovq  $8, %r9                         # %r9 <- $8
@@ -52,20 +52,19 @@ LN1:    popq    %rbx                            # increment %rsp, delete %rbx va
         popq    %rbp                            # increment %rsp, delete %rbp value
         ret
 
-LN6:    rrmovq  %rdi, %rax                      # %rax <- %rdi 
+LN6:    rrmovq  %rdi, %rax                      # %rax <- %rdi
         rrmovq  %rdi, %rbx                      # %rbx <- %rdi
 LN5:    mrmovq  (%rax), %rdx                    # %rdx <- M[%rax]
         rrmovq  %r8, %r9                        # %r9 <- %r8
         subq    %rdx, %r9                       # %r9 <- %r9 - %rdx
+        irmovq  $8, %r9                         # %r9 <- $8
         jl      LN4                             # jump to LN4 if %r9 is less than 0
 
-        mrmovq  (%rbx), %rsi                    # %rsi <- M[%rbx]////////////////////////////////////
-        irmovq  $8, %r9                         # %r9 <- $8
+        mrmovq  (%rbx), %rsi                    # %rsi <- M[%rbx]
         rmmovq  %rdx, (%rbx)                    # M[%rbx] <- %rdx
         rmmovq  %rsi, (%rax)                    # M[%rax] <- %rsi
         addq    %r9, %rbx                       # %rbx <- %rbx + %r9
-LN4:    irmovq  $8, %r9                         # %r9 <- 8
-        addq    %r9, %rax                       # %rax <- %rax + %r9
+LN4:    addq    %r9, %rax                       # %rax <- %rax + %r9
         rrmovq  %rcx, %r9                       # %r9 <- %rcx
         subq    %rax, %r9                       # %r9 <- %r9 - %rax
         jle     LN3                             # jump to LN3 if %r9 is less than or equal to 0
@@ -92,4 +91,3 @@ arraysize: .quad 10
 stack:  .quad 0x0,200
 stackend:
         .quad 0x0
-
