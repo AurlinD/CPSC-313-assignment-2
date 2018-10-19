@@ -26,9 +26,24 @@ quickSort:
         rrmovq  %rdi, %r9                       # %r9 <- %rdi
         mrmovq  (%rcx), %r8                     # %r8 <- M[%rcx]
         subq    %rcx, %r9                       # %r9 <- %r9 - %rcx
-        jle     LN6                             # if %r9 is less than or equal to 0, jump to LN6
+        jg     LN3                             # if %r9 is less than or equal to 0, jump to LN6
 
+LN6:    rrmovq  %rdi, %rax                      # %rax <- %rdi
         rrmovq  %rdi, %rbx                      # %rbx <- %rdi
+LN5:    mrmovq  (%rax), %rdx                    # %rdx <- M[%rax]
+        rrmovq  %r8, %r9                        # %r9 <- %r8
+        mrmovq  (%rbx), %rsi                    # %rsi <- M[%rbx]
+        subq    %rdx, %r9                       # %r9 <- %r9 - %rdx
+        jl      LN4                             # jump to LN4 if %r9 is less than 0
+
+        rmmovq  %rdx, (%rbx)                    # M[%rbx] <- %rdx
+        rmmovq  %rsi, (%rax)                    # M[%rax] <- %rsi
+        addq    %r13, %rbx                       # %rbx <- %rbx + %r9
+LN4:    addq    %r13, %rax                       # %rax <- %rax + %r9
+        rrmovq  %rcx, %r9                       # %r9 <- %rcx
+        subq    %rax, %r9                       # %r9 <- %r9 - %rax
+        jg      LN5                             # jump to LN3 if %r9 is less than or equal to 0
+
 LN3:    mrmovq  (%rcx), %rax                    # %rax <- M[%rcx]
         rrmovq  %rbx, %r12                      # %r12 <- %rbx
         mrmovq  (%rbx), %rdx                    # %rdx <- M[%rbx]
@@ -49,26 +64,7 @@ LN1:    popq    %rbx                            # increment %rsp, delete %rbx va
         popq    %r12                            # increment %r12, delete %r12 value, empty stack, return statement
         popq    %rbp                            # increment %rsp, delete %rbp value
         ret
-
-LN6:    rrmovq  %rdi, %rax                      # %rax <- %rdi
-        rrmovq  %rdi, %rbx                      # %rbx <- %rdi
-LN5:    mrmovq  (%rax), %rdx                    # %rdx <- M[%rax]
-        rrmovq  %r8, %r9                        # %r9 <- %r8
-        mrmovq  (%rbx), %rsi                    # %rsi <- M[%rbx]
-        subq    %rdx, %r9                       # %r9 <- %r9 - %rdx
-        jl      LN4                             # jump to LN4 if %r9 is less than 0
-
-        rmmovq  %rdx, (%rbx)                    # M[%rbx] <- %rdx
-        rmmovq  %rsi, (%rax)                    # M[%rax] <- %rsi
-        addq    %r13, %rbx                       # %rbx <- %rbx + %r9
-LN4:    addq    %r13, %rax                       # %rax <- %rax + %r9
-        rrmovq  %rcx, %r9                       # %r9 <- %rcx
-        subq    %rax, %r9                       # %r9 <- %r9 - %rax
-        jle     LN3                             # jump to LN3 if %r9 is less than or equal to 0
-        jmp     LN5                             # jump to LN5
-
-
-        
+   
 .pos 0x2000
 array:  .quad 0x00000007
         .quad 0x00000003
