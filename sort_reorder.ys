@@ -9,12 +9,12 @@ main:
         
 .pos 0x200
 quickSort:
-        pushq   %r12                            # save old %r12 value, and decrement %rsp, varialbe A
-        irmovq  $1, %r9                         # %r9 <- $1///////////
         pushq   %rbp                            # save old %rbp value, and decrement %rsp, variable I
+        irmovq  $1, %r9                         # %r9 <- $1
+        pushq   %r12                            # save old %r12 value, and decrement %rsp, varialbe A
         rrmovq  %rsi, %rbp                      # register move %rbp <- %rsi
-        pushq   %rbx                            # save old %rbx value, and decrement %rsp
         subq    %rsi, %r9                       # %r9 <- %r9 - %rsi, rsi is variable len
+        pushq   %rbx                            # save old %rbx value, and decrement %rsp
         jge     LN1                             # if %r9 is greater than or equal to 0 jump to LN1, if (len <= 1) 
 
         irmovq  $8, %r9                         # %r9 <- $8
@@ -27,15 +27,15 @@ quickSort:
         subq    %rcx, %r9                       # %r9 <- %r9 - %rcx
         jle     LN6                             # if %r9 is less than or equal to 0, jump to LN6
 
-        rrmovq  %rdi, %rbx                      # %rbx <- %rdi
-LN3:    mrmovq  (%rbx), %rdx                    # %rdx <- M[%rbx]
-        mrmovq  (%rcx), %rax                    # %rax <- M[%rcx]
-        rmmovq  %rax, (%rbx)                    # M[%rbx] <- %rax
-        irmovq  $8, %r9                         # %r9 <- $8
+        rrmovq  %rdi, %rbx                      # %rbx <- %rdi//////////////////////////
+LN3:    mrmovq  (%rcx), %rax                    # %rax <- M[%rcx]
         rrmovq  %rbx, %r12                      # %r12 <- %rbx
+        irmovq  $8, %r9                         # %r9 <- $8
+        mrmovq  (%rbx), %rdx                    # %rdx <- M[%rbx]/////////////****
         subq    %rdi, %r12                      # %r12 <- %r12 - %rdi
         divq    %r9, %r12                       # %r12 <- %r12 / %r9
         rmmovq  %rdx, (%rcx)                    # M[%rcx] <- %rdx
+        rmmovq  %rax, (%rbx)                    # M[%rbx] <- %rax
         rrmovq  %r12, %rsi                      # %rsi <- %r12
         call    quickSort                       # recursive call quickSort(A, i - A);
         subq    %r12, %rbp                      # %rbp <- %rbp - %r12, I-A
@@ -48,8 +48,8 @@ LN3:    mrmovq  (%rbx), %rdx                    # %rdx <- M[%rbx]
         call    quickSort                       # recursive call quickSort(i + 1, len - (i - A) - 1);
 
 LN1:    popq    %rbx                            # increment %rsp, delete %rbx value
-        popq    %rbp                            # increment %rsp, delete %rbp value
         popq    %r12                            # increment %r12, delete %r12 value, empty stack, return statement
+        popq    %rbp                            # increment %rsp, delete %rbp value
         ret
 
 LN6:    rrmovq  %rdi, %rax                      # %rax <- %rdi 
@@ -58,9 +58,9 @@ LN5:    mrmovq  (%rax), %rdx                    # %rdx <- M[%rax]
         rrmovq  %r8, %r9                        # %r9 <- %r8
         subq    %rdx, %r9                       # %r9 <- %r9 - %rdx
         jl      LN4                             # jump to LN4 if %r9 is less than 0
-        
+
+        mrmovq  (%rbx), %rsi                    # %rsi <- M[%rbx]////////////////////////////////////
         irmovq  $8, %r9                         # %r9 <- $8
-        mrmovq  (%rbx), %rsi                    # %rsi <- M[%rbx]
         rmmovq  %rdx, (%rbx)                    # M[%rbx] <- %rdx
         rmmovq  %rsi, (%rax)                    # M[%rax] <- %rsi
         addq    %r9, %rbx                       # %rbx <- %rbx + %r9
