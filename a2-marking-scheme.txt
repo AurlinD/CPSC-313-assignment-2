@@ -1,0 +1,86 @@
+*** Grade before late penalty: [/61]
+
+
+[/10] Part 1: Commented sort.ys file
+-------------------------
+
+The code  can be divided roughly into five sections.
+In order to get full marks for a section, the comments written
+should indicate an understanding of what the instructions
+do and how they relate to the C code. The sections are:
+
+    [/1] Calling quicksort in main (including its setup).
+
+    [/1] Checking for edge cases in quicksort.
+
+    [/2] Initializing up i, j, high, and pivot.
+
+    [/3] L3 block and its correspondence to the last part of the C code.
+
+    [/3] L5, L6 and their correspondence to the while loop in the C code.
+
+
+[/10] Part 2: Performance evaluation
+------------------------------------
+
+    [/5] Correctly evaluated the code on the original array.
+        [/1] 507 cycles on Sequential.
+        [/1] 1301 cycles on PIPE with stalling.
+	    [/1] 666 cycles on PIPE with data forwarding.
+        [/1] 628 cycles on PIPE with D.F.+Branch Prediction
+        [/1] 507 retired instructions for all cases
+
+    [/5] Provided at least 10 additional arrays and reported evaluated them
+    	[/0.5] Includes at least one "regular", random array with around
+	     the same size as the original (between 6 and 20 elements).
+        [/1] Includes at least one very small array (one or two elements).
+        [/1] Includes at least one very large array (at least 30 elements).
+        [/1] Includes at least one sorted array (can be the same as one of
+	     the above).
+        [/0.5] Includes one empty array.
+        [/1] Includes at least one array with repeating items.
+
+
+[/40] Part 3: Code Optimization
+------------------------------------
+ For evaluating the code performance in this part, we consider
+the average of all 10 test cases.
+
+    [/15] Part i: sort_reorder.ys
+        [/6] Runs at least 20% faster on PIPE with stalling
+        [/4] Runs at close to the same speed on Sequential and
+             PIPE with D.F.+Branch Prediction
+	[/5] Lists results of sort_reorder for provided arrays
+	     (0.5 point for each listed test, up to 10 tests)
+
+	     Additional penalties:
+	     [/-15] Uses any instruction not existent in the original file
+	     [/-5]  The provided code doesn't sort the array in some cases
+	     [/-15] The provided code doesn't sort the array in all cases
+	     [/-??] Additional penalties at marker's discretion
+
+    [/25] Part ii: sort_optimal.ys
+        [/7] Runs at least 35% faster on PIPE with stalling
+        [/7] Runs at least 15% faster on
+             PIPE with D.F.+Branch Prediction
+        [/6] Runs close to the same speed on Sequential
+	[/5] Lists results of sort_optimal for provided arrays
+	     (0.5 point for each listed test, up to 10 tests)
+
+	     Additional penalties:
+	     [/-4] Uses a callee-saved register without saving its value in stack
+	     [/-10] Changes the order or meaning of arguments
+	     [/-10] Uses a different pivot instead of the last element
+	     [/-10] The provided code doesn't sort the array in some cases
+	     [/-25] The provided code doesn't sort the array in all cases
+	     [/-25] Uses a different algorithm instead of quicksort
+	     [/-??] Additional penalties at marker's discretion
+
+
+Solution are to be run in the simulator.
+
+--------------------
+
+[/1] Filled in Cover Page
+
+-----------------------------------
