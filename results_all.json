@@ -1,0 +1,366 @@
+{
+    "sort_optimal.ys": {
+        "descending_size20.txt": {
+            "seq": {
+                "cycles": 2892,
+                "retired": 2892
+            },
+            "pipestall": {
+                "cycles": 5978,
+                "retired": 2892
+            },
+            "pipefwd": {
+                "cycles": 3889,
+                "retired": 2892
+            },
+            "pipebp": {
+                "cycles": 3291,
+                "retired": 2892
+            }
+        },
+        "random_1_10.txt": {
+            "seq": {
+                "cycles": 556,
+                "retired": 556
+            },
+            "pipestall": {
+                "cycles": 1234,
+                "retired": 556
+            },
+            "pipefwd": {
+                "cycles": 737,
+                "retired": 556
+            },
+            "pipebp": {
+                "cycles": 655,
+                "retired": 556
+            }
+        },
+        "random_1_100.txt": {
+            "seq": {
+                "cycles": 9237,
+                "retired": 9237
+            },
+            "pipestall": {
+                "cycles": 19205,
+                "retired": 9237
+            },
+            "pipefwd": {
+                "cycles": 12354,
+                "retired": 9237
+            },
+            "pipebp": {
+                "cycles": 10478,
+                "retired": 9237
+            }
+        },
+        "random_1_15.txt": {
+            "seq": {
+                "cycles": 993,
+                "retired": 993
+            },
+            "pipestall": {
+                "cycles": 2180,
+                "retired": 993
+            },
+            "pipefwd": {
+                "cycles": 1322,
+                "retired": 993
+            },
+            "pipebp": {
+                "cycles": 1166,
+                "retired": 993
+            }
+        },
+        "random_1_16.txt": {
+            "seq": {
+                "cycles": 1205,
+                "retired": 1205
+            },
+            "pipestall": {
+                "cycles": 2553,
+                "retired": 1205
+            },
+            "pipefwd": {
+                "cycles": 1586,
+                "retired": 1205
+            },
+            "pipebp": {
+                "cycles": 1358,
+                "retired": 1205
+            }
+        },
+        "random_1_20.txt": {
+            "seq": {
+                "cycles": 1695,
+                "retired": 1695
+            },
+            "pipestall": {
+                "cycles": 3599,
+                "retired": 1695
+            },
+            "pipefwd": {
+                "cycles": 2284,
+                "retired": 1695
+            },
+            "pipebp": {
+                "cycles": 1972,
+                "retired": 1695
+            }
+        },
+        "random_1_32.txt": {
+            "seq": {
+                "cycles": 2485,
+                "retired": 2485
+            },
+            "pipestall": {
+                "cycles": 5281,
+                "retired": 2485
+            },
+            "pipefwd": {
+                "cycles": 3314,
+                "retired": 2485
+            },
+            "pipebp": {
+                "cycles": 2854,
+                "retired": 2485
+            }
+        },
+        "random_1_50.txt": {
+            "seq": {
+                "cycles": 4772,
+                "retired": 4772
+            },
+            "pipestall": {
+                "cycles": 10038,
+                "retired": 4772
+            },
+            "pipefwd": {
+                "cycles": 6425,
+                "retired": 4772
+            },
+            "pipebp": {
+                "cycles": 5507,
+                "retired": 4772
+            }
+        },
+        "repetitive_size10.txt": {
+            "seq": {
+                "cycles": 609,
+                "retired": 609
+            },
+            "pipestall": {
+                "cycles": 1340,
+                "retired": 609
+            },
+            "pipefwd": {
+                "cycles": 794,
+                "retired": 609
+            },
+            "pipebp": {
+                "cycles": 698,
+                "retired": 609
+            }
+        },
+        "sorted_size20.txt": {
+            "seq": {
+                "cycles": 3192,
+                "retired": 3192
+            },
+            "pipestall": {
+                "cycles": 6278,
+                "retired": 3192
+            },
+            "pipefwd": {
+                "cycles": 4189,
+                "retired": 3192
+            },
+            "pipebp": {
+                "cycles": 3391,
+                "retired": 3192
+            }
+        }
+    },
+    "sort_reorder.ys": {
+        "descending_size20.txt": {
+            "seq": {
+                "cycles": 3327,
+                "retired": 3327
+            },
+            "pipestall": {
+                "cycles": 6297,
+                "retired": 3327
+            },
+            "pipefwd": {
+                "cycles": 4324,
+                "retired": 3327
+            },
+            "pipebp": {
+                "cycles": 4068,
+                "retired": 3327
+            }
+        },
+        "random_1_10.txt": {
+            "seq": {
+                "cycles": 622,
+                "retired": 622
+            },
+            "pipestall": {
+                "cycles": 1262,
+                "retired": 622
+            },
+            "pipefwd": {
+                "cycles": 803,
+                "retired": 622
+            },
+            "pipebp": {
+                "cycles": 759,
+                "retired": 622
+            }
+        },
+        "random_1_100.txt": {
+            "seq": {
+                "cycles": 10588,
+                "retired": 10588
+            },
+            "pipestall": {
+                "cycles": 20152,
+                "retired": 10588
+            },
+            "pipefwd": {
+                "cycles": 13705,
+                "retired": 10588
+            },
+            "pipebp": {
+                "cycles": 12847,
+                "retired": 10588
+            }
+        },
+        "random_1_15.txt": {
+            "seq": {
+                "cycles": 1121,
+                "retired": 1121
+            },
+            "pipestall": {
+                "cycles": 2246,
+                "retired": 1121
+            },
+            "pipefwd": {
+                "cycles": 1450,
+                "retired": 1121
+            },
+            "pipebp": {
+                "cycles": 1374,
+                "retired": 1121
+            }
+        },
+        "random_1_16.txt": {
+            "seq": {
+                "cycles": 1356,
+                "retired": 1356
+            },
+            "pipestall": {
+                "cycles": 2636,
+                "retired": 1356
+            },
+            "pipefwd": {
+                "cycles": 1737,
+                "retired": 1356
+            },
+            "pipebp": {
+                "cycles": 1607,
+                "retired": 1356
+            }
+        },
+        "random_1_20.txt": {
+            "seq": {
+                "cycles": 1944,
+                "retired": 1944
+            },
+            "pipestall": {
+                "cycles": 3768,
+                "retired": 1944
+            },
+            "pipefwd": {
+                "cycles": 2533,
+                "retired": 1944
+            },
+            "pipebp": {
+                "cycles": 2407,
+                "retired": 1944
+            }
+        },
+        "random_1_32.txt": {
+            "seq": {
+                "cycles": 2830,
+                "retired": 2830
+            },
+            "pipestall": {
+                "cycles": 5498,
+                "retired": 2830
+            },
+            "pipefwd": {
+                "cycles": 3659,
+                "retired": 2830
+            },
+            "pipebp": {
+                "cycles": 3441,
+                "retired": 2830
+            }
+        },
+        "random_1_50.txt": {
+            "seq": {
+                "cycles": 5487,
+                "retired": 5487
+            },
+            "pipestall": {
+                "cycles": 10541,
+                "retired": 5487
+            },
+            "pipefwd": {
+                "cycles": 7140,
+                "retired": 5487
+            },
+            "pipebp": {
+                "cycles": 6764,
+                "retired": 5487
+            }
+        },
+        "repetitive_size10.txt": {
+            "seq": {
+                "cycles": 674,
+                "retired": 674
+            },
+            "pipestall": {
+                "cycles": 1361,
+                "retired": 674
+            },
+            "pipefwd": {
+                "cycles": 859,
+                "retired": 674
+            },
+            "pipebp": {
+                "cycles": 795,
+                "retired": 674
+            }
+        },
+        "sorted_size20.txt": {
+            "seq": {
+                "cycles": 3627,
+                "retired": 3627
+            },
+            "pipestall": {
+                "cycles": 6597,
+                "retired": 3627
+            },
+            "pipefwd": {
+                "cycles": 4624,
+                "retired": 3627
+            },
+            "pipebp": {
+                "cycles": 4168,
+                "retired": 3627
+            }
+        }
+    }
+}
