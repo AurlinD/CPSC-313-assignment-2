@@ -2,20 +2,20 @@
     "sort_optimal.ys": {
         "descending_size20.txt": {
             "seq": {
-                "cycles": 2892,
-                "retired": 2892
+                "cycles": 1,
+                "retired": 1
             },
             "pipestall": {
-                "cycles": 5978,
-                "retired": 2892
+                "cycles": 5,
+                "retired": 1
             },
             "pipefwd": {
-                "cycles": 3889,
-                "retired": 2892
+                "cycles": 5,
+                "retired": 1
             },
             "pipebp": {
-                "cycles": 3291,
-                "retired": 2892
+                "cycles": 5,
+                "retired": 1
             }
         },
         "random_1_10.txt": {
