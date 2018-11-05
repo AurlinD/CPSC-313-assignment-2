@@ -1,4 +1,4 @@
-*** Grade before late penalty: [58/61]
+*** Grade before late penalty: [49/61]
 
 
 [10/10] Part 1: Commented sort.ys file
@@ -15,7 +15,7 @@ do and how they relate to the C code. The sections are:
 
     [2/2] Initializing up i, j, high, and pivot.
 
-    [3/3] L3 blocksand its correspondence to the last part of the C code.
+    [3/3] L3 block and its correspondence to the last part of the C code.
 
     [3/3] L5, L6 and their correspondence to the while loop in the C code.
 
@@ -25,12 +25,12 @@ do and how they relate to the C code. The sections are:
 
     [5/5] Correctly evaluated the code on the original array.
         [1/1] 507 cycles on Sequential.
-        [1/1] 1301 cycles on PI1PE with stalling.
+        [1/1] 1301 cycles on PIPE with stalling.
 	    [1/1] 666 cycles on PIPE with data forwarding.
         [1/1] 628 cycles on PIPE with D.F.+Branch Prediction
         [1/1] 507 retired instructions for all cases
 
-    [4/5] Provided at least 10 additional arrays and reported evaluated them
+    [4/5] provided at least 5 additional arrays and reported evaluated them
     	[0/0.5] Includes at least one "regular", random array with around
 	     the same size as the original (between 6 and 20 elements).
         [1/1] Includes at least one very small array (one or two elements).
@@ -41,17 +41,17 @@ do and how they relate to the C code. The sections are:
         [1/1] Includes at least one array with repeating items.
 
 
-[28/40] Part 3: Code Optimization
+[29/40] Part 3: Code Optimization
 ------------------------------------
  For evaluating the code performance in this part, we consider
 the average of all 10 test cases.
 
-    [10/15] Part i: sort_reorder.ys
+    [15/15] Part i: sort_reorder.ys
         [6/6] Runs at least 20% faster on PIPE with stalling #BOT# 22.696%
         [4/4] Runs at close to the same speed on Sequential and #BOT# 1.065%, 3.573%
              PIPE with D.F.+Branch Prediction
 	[5/5] Lists results of sort_reorder for provided arrays
-	     (0.5 point for each listed test, up to 10 tests)
+	     (1 point for each listed test, up to 5 tests)
 
 	     Additional penalties:
 	     [0/-15] Uses any instruction not existent in the original file
@@ -59,19 +59,19 @@ the average of all 10 test cases.
 	     [0/-15] The provided code doesn't sort the array in all cases
 	     [/-??] Additional penalties at marker's discretion
 
-    [18/25] Part ii: sort_optimal.ys
-        [5/7] Runs at least 35% faster on PIPE with stalling #BOT# 25.602%
-        [7/7] Runs at least 15% faster on #BOT# 19.623%
+    [14/25] Part ii: sort_optimal.ys
+        [6/7] Runs at least 35% faster on PIPE with stalling #BOT# 32.951%
+        [7/7] Runs at least 15% faster on #BOT# 27.473%
              PIPE with D.F.+Branch Prediction
-        [6/6] Runs close to the same speed on Sequential #BOT# 12.813%
+        [6/6] Runs close to the same speed on Sequential #BOT# 21.479%
 	[5/5] Lists results of sort_optimal for provided arrays
-	     (0.5 point for each listed test, up to 10 tests)
+	     (1 point for each listed test, up to 5 tests)
 
 	     Additional penalties:
 	     [0/-4] Uses a callee-saved register without saving its value in stack
 	     [0/-10] Changes the order or meaning of arguments
 	     [0/-10] Uses a different pivot instead of the last element
-	     [0/-10] The provided code doesn't sort the array in some cases
+	     [-10/-10] The provided code doesn't sort the array in some cases #BOT# see grade_explain.sort_optimal.ys.correctness.txt for more detail
 	     [0/-25] The provided code doesn't sort the array in all cases
 	     [0/-25] Uses a different algorithm instead of quicksort
 	     [/-??] Additional penalties at marker's discretion
