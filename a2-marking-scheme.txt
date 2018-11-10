@@ -1,4 +1,4 @@
-*** Grade before late penalty: [49/61]
+*** Grade before late penalty: [58/61]
 
 
 [10/10] Part 1: Commented sort.ys file
@@ -41,7 +41,7 @@ do and how they relate to the C code. The sections are:
         [1/1] Includes at least one array with repeating items.
 
 
-[29/40] Part 3: Code Optimization
+[38/40] Part 3: Code Optimization
 ------------------------------------
  For evaluating the code performance in this part, we consider
 the average of all 10 test cases.
@@ -59,11 +59,11 @@ the average of all 10 test cases.
 	     [0/-15] The provided code doesn't sort the array in all cases
 	     [/-??] Additional penalties at marker's discretion
 
-    [14/25] Part ii: sort_optimal.ys
-        [6/7] Runs at least 35% faster on PIPE with stalling #BOT# 32.951%
-        [7/7] Runs at least 15% faster on #BOT# 27.473%
+    [23/25] Part ii: sort_optimal.ys
+        [5/7] Runs at least 35% faster on PIPE with stalling #BOT# 25.602%
+        [7/7] Runs at least 15% faster on #BOT# 19.623%
              PIPE with D.F.+Branch Prediction
-        [6/6] Runs close to the same speed on Sequential #BOT# 21.479%
+        [6/6] Runs close to the same speed on Sequential #BOT# 12.813%
 	[5/5] Lists results of sort_optimal for provided arrays
 	     (1 point for each listed test, up to 5 tests)
 
@@ -71,7 +71,7 @@ the average of all 10 test cases.
 	     [0/-4] Uses a callee-saved register without saving its value in stack
 	     [0/-10] Changes the order or meaning of arguments
 	     [0/-10] Uses a different pivot instead of the last element
-	     [-10/-10] The provided code doesn't sort the array in some cases #BOT# see grade_explain.sort_optimal.ys.correctness.txt for more detail
+	     [0/-10] The provided code doesn't sort the array in some cases
 	     [0/-25] The provided code doesn't sort the array in all cases
 	     [0/-25] Uses a different algorithm instead of quicksort
 	     [/-??] Additional penalties at marker's discretion

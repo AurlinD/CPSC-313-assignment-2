@@ -2,20 +2,20 @@
     "sort_optimal.ys": {
         "descending_size20.txt": {
             "seq": {
-                "cycles": 1,
-                "retired": 1
+                "cycles": 2892,
+                "retired": 2892
             },
             "pipestall": {
-                "cycles": 5,
-                "retired": 1
+                "cycles": 5978,
+                "retired": 5978
             },
             "pipefwd": {
-                "cycles": 5,
-                "retired": 1
+                "cycles": 3889,
+                "retired": 3889
             },
             "pipebp": {
-                "cycles": 5,
-                "retired": 1
+                "cycles": 3291,
+                "retired": 3291
             }
         },
         "random_1_10.txt": {
@@ -25,15 +25,15 @@
             },
             "pipestall": {
                 "cycles": 1234,
-                "retired": 556
+                "retired": 1234
             },
             "pipefwd": {
                 "cycles": 737,
-                "retired": 556
+                "retired": 737
             },
             "pipebp": {
                 "cycles": 655,
-                "retired": 556
+                "retired": 655
             }
         },
         "random_1_100.txt": {
@@ -43,15 +43,15 @@
             },
             "pipestall": {
                 "cycles": 19205,
-                "retired": 9237
+                "retired": 19205
             },
             "pipefwd": {
                 "cycles": 12354,
-                "retired": 9237
+                "retired": 12354
             },
             "pipebp": {
                 "cycles": 10478,
-                "retired": 9237
+                "retired": 10478
             }
         },
         "random_1_15.txt": {
@@ -61,15 +61,15 @@
             },
             "pipestall": {
                 "cycles": 2180,
-                "retired": 993
+                "retired": 2180
             },
             "pipefwd": {
                 "cycles": 1322,
-                "retired": 993
+                "retired": 1322
             },
             "pipebp": {
                 "cycles": 1166,
-                "retired": 993
+                "retired": 1166
             }
         },
         "random_1_16.txt": {
@@ -79,15 +79,15 @@
             },
             "pipestall": {
                 "cycles": 2553,
-                "retired": 1205
+                "retired": 2553
             },
             "pipefwd": {
                 "cycles": 1586,
-                "retired": 1205
+                "retired": 1586
             },
             "pipebp": {
                 "cycles": 1358,
-                "retired": 1205
+                "retired": 1358
             }
         },
         "random_1_20.txt": {
@@ -97,15 +97,15 @@
             },
             "pipestall": {
                 "cycles": 3599,
-                "retired": 1695
+                "retired": 3599
             },
             "pipefwd": {
                 "cycles": 2284,
-                "retired": 1695
+                "retired": 2284
             },
             "pipebp": {
                 "cycles": 1972,
-                "retired": 1695
+                "retired": 1972
             }
         },
         "random_1_32.txt": {
@@ -115,15 +115,15 @@
             },
             "pipestall": {
                 "cycles": 5281,
-                "retired": 2485
+                "retired": 5281
             },
             "pipefwd": {
                 "cycles": 3314,
-                "retired": 2485
+                "retired": 3314
             },
             "pipebp": {
                 "cycles": 2854,
-                "retired": 2485
+                "retired": 2854
             }
         },
         "random_1_50.txt": {
@@ -133,15 +133,15 @@
             },
             "pipestall": {
                 "cycles": 10038,
-                "retired": 4772
+                "retired": 10038
             },
             "pipefwd": {
                 "cycles": 6425,
-                "retired": 4772
+                "retired": 6425
             },
             "pipebp": {
                 "cycles": 5507,
-                "retired": 4772
+                "retired": 5507
             }
         },
         "repetitive_size10.txt": {
@@ -151,15 +151,15 @@
             },
             "pipestall": {
                 "cycles": 1340,
-                "retired": 609
+                "retired": 1340
             },
             "pipefwd": {
                 "cycles": 794,
-                "retired": 609
+                "retired": 794
             },
             "pipebp": {
                 "cycles": 698,
-                "retired": 609
+                "retired": 698
             }
         },
         "sorted_size20.txt": {
@@ -169,15 +169,15 @@
             },
             "pipestall": {
                 "cycles": 6278,
-                "retired": 3192
+                "retired": 6278
             },
             "pipefwd": {
                 "cycles": 4189,
-                "retired": 3192
+                "retired": 4189
             },
             "pipebp": {
                 "cycles": 3391,
-                "retired": 3192
+                "retired": 3391
             }
         }
     },
@@ -189,15 +189,15 @@
             },
             "pipestall": {
                 "cycles": 6297,
-                "retired": 3327
+                "retired": 6297
             },
             "pipefwd": {
                 "cycles": 4324,
-                "retired": 3327
+                "retired": 4324
             },
             "pipebp": {
                 "cycles": 4068,
-                "retired": 3327
+                "retired": 4068
             }
         },
         "random_1_10.txt": {
@@ -207,15 +207,15 @@
             },
             "pipestall": {
                 "cycles": 1262,
-                "retired": 622
+                "retired": 1262
             },
             "pipefwd": {
                 "cycles": 803,
-                "retired": 622
+                "retired": 803
             },
             "pipebp": {
                 "cycles": 759,
-                "retired": 622
+                "retired": 759
             }
         },
         "random_1_100.txt": {
@@ -225,15 +225,15 @@
             },
             "pipestall": {
                 "cycles": 20152,
-                "retired": 10588
+                "retired": 20152
             },
             "pipefwd": {
                 "cycles": 13705,
-                "retired": 10588
+                "retired": 13705
             },
             "pipebp": {
                 "cycles": 12847,
-                "retired": 10588
+                "retired": 12847
             }
         },
         "random_1_15.txt": {
@@ -243,15 +243,15 @@
             },
             "pipestall": {
                 "cycles": 2246,
-                "retired": 1121
+                "retired": 2246
             },
             "pipefwd": {
                 "cycles": 1450,
-                "retired": 1121
+                "retired": 1450
             },
             "pipebp": {
                 "cycles": 1374,
-                "retired": 1121
+                "retired": 1374
             }
         },
         "random_1_16.txt": {
@@ -261,15 +261,15 @@
             },
             "pipestall": {
                 "cycles": 2636,
-                "retired": 1356
+                "retired": 2636
             },
             "pipefwd": {
                 "cycles": 1737,
-                "retired": 1356
+                "retired": 1737
             },
             "pipebp": {
                 "cycles": 1607,
-                "retired": 1356
+                "retired": 1607
             }
         },
         "random_1_20.txt": {
@@ -279,15 +279,15 @@
             },
             "pipestall": {
                 "cycles": 3768,
-                "retired": 1944
+                "retired": 3768
             },
             "pipefwd": {
                 "cycles": 2533,
-                "retired": 1944
+                "retired": 2533
             },
             "pipebp": {
                 "cycles": 2407,
-                "retired": 1944
+                "retired": 2407
             }
         },
         "random_1_32.txt": {
@@ -297,15 +297,15 @@
             },
             "pipestall": {
                 "cycles": 5498,
-                "retired": 2830
+                "retired": 5498
             },
             "pipefwd": {
                 "cycles": 3659,
-                "retired": 2830
+                "retired": 3659
             },
             "pipebp": {
                 "cycles": 3441,
-                "retired": 2830
+                "retired": 3441
             }
         },
         "random_1_50.txt": {
@@ -315,15 +315,15 @@
             },
             "pipestall": {
                 "cycles": 10541,
-                "retired": 5487
+                "retired": 10541
             },
             "pipefwd": {
                 "cycles": 7140,
-                "retired": 5487
+                "retired": 7140
             },
             "pipebp": {
                 "cycles": 6764,
-                "retired": 5487
+                "retired": 6764
             }
         },
         "repetitive_size10.txt": {
@@ -333,15 +333,15 @@
             },
             "pipestall": {
                 "cycles": 1361,
-                "retired": 674
+                "retired": 1361
             },
             "pipefwd": {
                 "cycles": 859,
-                "retired": 674
+                "retired": 859
             },
             "pipebp": {
                 "cycles": 795,
-                "retired": 674
+                "retired": 795
             }
         },
         "sorted_size20.txt": {
@@ -351,15 +351,15 @@
             },
             "pipestall": {
                 "cycles": 6597,
-                "retired": 3627
+                "retired": 6597
             },
             "pipefwd": {
                 "cycles": 4624,
-                "retired": 3627
+                "retired": 4624
             },
             "pipebp": {
                 "cycles": 4168,
-                "retired": 3627
+                "retired": 4168
             }
         }
     }
